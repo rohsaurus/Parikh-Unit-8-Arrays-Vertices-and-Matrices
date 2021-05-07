@@ -1,51 +1,9 @@
-/* Create an empty c++ console project named "YourLastName_WS_Title" For example DiGiovanna_WS_Files
-// Copy the Worksheets.h, Worksheets.cpp, runWorkSheets.cpp, GetData.h, GetDataR2.cpp , MyFunctions.cpp, MyFunctions.h
-// file to the directory containing your project's *.sln file
-// In the solution Explorer window, add the RunWorksheets.cpp file to the project by 
-//  1) Right clicking on the source files folder, select "add"
-//  2) Select "existing item"
-//  3) A popup appears. Select the "RunWorksheets.cpp" file
-// In the solution Explorer window, add the Worksheets.h file to the project by 
-//  1) Right clicking on the header files folder, select "add"
-//  2) Select "existing item"
-//  3) A popup appears. Select the "Worksheets.h" file
-// In the solution Explorer window, add the Worksheets.cpp file to the project by 
-//  1) Right clicking on the source files folder, select "add"
-//  2) Select "existing item"
-//  3) A popup appears. Select the "Worksheets.cpp" file
-// Add your code to the program per the instructions. 
-// In the solution Explorer window, add the GetDataR2.cpp file to the project by 
-//  1) Right clicking on the source files folder, select "add"
-//  2) Select "existing item"
-//  3) A popup appears. Select the "GetDataR2.cpp" file
-// In the solution Explorer window, add the GetData.h file to the project by
-//  1) Right clicking on the source files folder, select "add"
-//  2) Select "existing item"
-//  3) A popup appears. Select the "GetData.h" file
-// Add your code to the program per the instructions. 
-// In the solution Explorer window, add the MyFunctions.H file to the project by
-//  1) Right clicking on the source files folder, select "add"
-//  2) Select "existing item"
-//  3) A popup appears. Select the "MyFunctions.h" file
-// In the solution Explorer window, add the MyFunctions.cpp file to the project by
-//  1) Right clicking on the source files folder, select "add"
-//  2) Select "existing item"
-//  3) A popup appears. Select the "MyFunctions.cpp" file
-
-// Add your code to the program per the instructions in each of the files.
-// Classes can be added freely just as before (Use the Project/add class from the menu.
-// You may delete these instructions from your program if you find them intrusive.
-
-//REVISIONS
-// 4/17/2021
-// Added the data validation routines and the MyFuncion files and updated instructions accordingly
-*/
-
 /*
  *Rohan Parikh
  *Unit 8 Arrays Vertices and Matrices
  *5 May 2021-
- *Extra Thing:
+ *Extra Thing:Worksheet Arrays Extra Thing is to print question 2 array to a file
+ *Extra Thing: Worksheet Functions and arrays In Question 1, print user's favorite number and vector into a file
  */
 
 #include <iostream>
@@ -68,18 +26,15 @@ int main()
 
     string name1 = "Worksheet Arrays 1 Question 2";
     string name2 = "Worksheet Arrays 1 Question 3";
-    string name3 = "Worksheet If - Else statements";
-    string name4 = "Worksheet More work with if - else";
-    string name5 = "Worksheet Functions Q2";
-    string name6 = "Unassigned";
-    string name7 = "Unassigned";
+    string name3 = "Worksheet Arrays 1 Question 4";
+    string name4 = "Worksheet Arrays 1 Question 5";
+    string name5 = "Working with Functions and Arrays Question 1";
+    string name6 = "Working with Functions and Arrays Question 2";
+    string name7 = "Worksheet Working with Parallel Arrays";
     string name8 = "Unassigned";
     string name9 = "Unassigned";
     string name10 = "Unassigned";
-
-    //Uncomment the needed loops
-    //the defualt is 5. up to 10 are supported
-    //Contact me if you want to add mor (You can do this yourself too)
+/*
     do {
         worksheet1(name1);
         cout << "Press y/Y to run again. Any other character to proceed: ";
@@ -140,7 +95,6 @@ int main()
         }
     } while (runAgain);
 /*Uncomment as many as you need*/
-/*
     do {
         worksheet6(name6);
         cout << "Press y/Y to run again. Any other character to proceed: ";
@@ -200,5 +154,4 @@ int main()
             runAgain = false;
         }
     } while (runAgain);
- */
 }
