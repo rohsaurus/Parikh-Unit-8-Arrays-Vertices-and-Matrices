@@ -152,5 +152,115 @@ void reverseFunctionforQ2Worksheet2(std::string words[])
     cout << toto << "\t\t" << totoReversed << "\t\t " << totoPal << endl;
 
 }
+int getIndex(std::vector<int> v, int k)
+{
+    auto it = find(v.begin(), v.end(), k);
+    int index = 0;
+ 
+    // If element was found
+    if (it != v.end())
+    {
+     
+        // calculating the index
+        // of K
+        index = it - v.begin();
+    }
+    else {
+        // If the element is not
+        // present in the vector
+        cout << "That's not a valid distance\nPlease enter in a valid distance\n";
+        k = Data_Validation_integer();
+    }
+    return index;
+}
+void studentData(std::vector<std::string> names, std::vector<std::string> address, std::vector<std::string> phoneNumber, int i)
+{
+    cout << "Student 1:\t";
+    // depending on which run it is affects what prints
+    if (i == 0)
+    {
+        cout << names[0];
+    }
+    else if (i == 1)
+    {
+       cout << address[0];
+    }
+    else if (i == 2)
+    {
+       cout << phoneNumber[0];
+    }
+    cout << endl;
+    cout << "Student 2:\t";
+    // depending on which run it is affects what prints
+    if (i == 0)
+    {
+       cout << names[1];
+    }
+    else if (i == 1)
+    {
+       cout << address[1];
+    }
+    else if (i == 2)
+    {
+      cout <<  phoneNumber[1];
+    }
+    cout << endl;
+
+    cout << "Student 3:\t";
+    // depending on which run it is affects what prints
+    if (i == 0)
+    {
+        cout << names[2];
+    }
+    else if (i == 1)
+    {
+        cout << address[2];
+    }
+    else if (i == 2)
+    {
+        cout <<  phoneNumber[2];
+    }
+    cout << endl;
+
+    cout << "Student 4:\t";
+    // depending on which run it is affects what prints
+    if(i == 0)
+    {
+       cout << names[3];
+    }
+    else if (i == 1)
+    {
+      cout<<  address[3];
+    }
+    else if (i == 2)
+    {
+        cout << phoneNumber [3];
+    }
+    cout << endl;
+    cout << "Student 5:\t";
+    // depending on which run it is affects what prints
+    if(i == 0)
+    {
+       cout << names[4];
+    }
+    else if (i == 1)
+    {
+        cout << address[4];
+    }
+    else if (i == 2)
+    {
+       cout << phoneNumber[4];
+    }
+    cout << endl;
+cout << endl << endl;
+    if (i == 2)
+    {
+        cout << "Student 3:";
+        // for student 3, everything prints
+        cout << names[2] << endl << "\t" << address[2] << endl << "\t" << phoneNumber[2] << endl;
+    }
+}
+
+
 
 

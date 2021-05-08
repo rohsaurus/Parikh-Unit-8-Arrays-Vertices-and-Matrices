@@ -170,8 +170,42 @@ void worksheet6(string namedItem) {
 }
 
 void worksheet7(string namedItem) {
+    // Worksheet Name
     std::cout << endl << "worksheet: " << namedItem << endl << endl;
     //Put all code for worksheet 2 here
+    // Initilizing and defining vectors for parrall arrays
+    vector<int> Distance = {50,100,200,400,800,1000};
+    vector<double> Time = {7.24,13.54,28.03,71.12,158.67,220.15};
+    // asking user what distance do they want
+    cout << "You'll be asked to enter in a distance you would like to know more about\n";
+    int distance = Data_Validation_integer();
+    // function to retrieve index
+    int index = getIndex(Distance,distance);
+    cout << "Distance\tTime";
+    cout << endl;
+    cout << Distance[index] << "\t\t" << Time[index];
+    cout << endl;
+    // extra thing
+    // printing above to a file
+    ofstream file;
+    file.open("DistanceandTime.txt");
+    file << "Distance \tTime\n";
+    file << Distance[index] << "\t\t" << Time[index];
+    file << endl;
+
+    
+    // three parallal arrays Question 2
+    vector<string> full_names = {"Shaiiko Lebleu", "John Wick", "Tony Stark", "Steve Rogers", "Peter Parker"};
+    vector<string> addresses = {"444 BDS St.", "25 North Edgewood Dr.", "10880 Malibu Point", "569 Leaman Place", "20 Ingram St."};
+    vector<string> phone_numbers = {"123-456-7890", "420-389-2497", "212-970-4133", "678-136-7092", "923-803-3428"};
+
+    // function for printing student data
+    int i = 0;
+    while (i < 3)
+    {
+        studentData(full_names, addresses, phone_numbers, i);
+        i++;
+    }
 }
 
 void worksheet8(string namedItem) {

@@ -4,6 +4,7 @@
  *5 May 2021-
  *Extra Thing:Worksheet Arrays Extra Thing is to print question 2 array to a file
  *Extra Thing: Worksheet Functions and arrays In Question 1, print user's favorite number and vector into a file
+ *Extra Thing: Worksheet Parallal Arrays print final output to a file
  */
 
 #include <iostream>
