@@ -1,5 +1,13 @@
-//Add any function code goes here
-//if you didn't create any functions used exclusively for this worksheet you won't use this file.
+/*
+*Rohan Parikh
+*Unit 8 Arrays Vertices and Matrices
+*5 May 2021-
+*Extra Thing:Worksheet Arrays Extra Thing is to print question 2 array to a file
+*Extra Thing: Worksheet Functions and arrays In Question 1, print user's favorite number and vector into a file
+*Extra Thing: Worksheet Parallel Arrays print final output to a file
+*Extra Thing: Worksheet Searching arrays allows user to try to win the lottery again
+
+*/
 
 #include "MyFunctions.h"
 

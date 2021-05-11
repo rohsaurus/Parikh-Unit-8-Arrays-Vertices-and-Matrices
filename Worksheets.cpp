@@ -1,3 +1,13 @@
+/*
+*Rohan Parikh
+*Unit 8 Arrays Vertices and Matrices
+*5 May 2021-
+*Extra Thing:Worksheet Arrays Extra Thing is to print question 2 array to a file
+*Extra Thing: Worksheet Functions and arrays In Question 1, print user's favorite number and vector into a file
+*Extra Thing: Worksheet Parallel Arrays print final output to a file
+*Extra Thing: Worksheet Searching arrays allows user to try to win the lottery again
+*/
+
 #include "Worksheets.h"
 #include "GetData.h"
 #include "MyFunctions.h"
@@ -172,7 +182,7 @@ void worksheet6(string namedItem) {
 void worksheet7(string namedItem) {
     // Worksheet Name
     std::cout << endl << "worksheet: " << namedItem << endl << endl;
-    //Put all code for worksheet 2 here
+    //Put all code for worksheet 3 here
     // Initilizing and defining vectors for parrall arrays
     vector<int> Distance = {50,100,200,400,800,1000};
     vector<double> Time = {7.24,13.54,28.03,71.12,158.67,220.15};
@@ -209,8 +219,47 @@ void worksheet7(string namedItem) {
 }
 
 void worksheet8(string namedItem) {
+    // identifiying worksheet name
     std::cout << endl << "worksheet: " << namedItem << endl << endl;
-    //Put all code for worksheet 3 here
+    //Put all code for worksheet 4 here
+    // declaring winning numbers array
+    int winning_numbers[] = {307,521,416,154,243,893};
+    // Extra thing
+    // allows user to repeat if they want to
+    string repeat = " ";
+    do
+    {
+        cout << "Enter your ticket number\n";
+        // checking user input to make sure its good
+        int key = Data_Validation_integer();
+        // checking if key is one of the winning numbers
+        bool didYouWin = false;
+        for (int i = 0; i < 6; i++)
+        {
+            // declaring temp varabiable
+            int arrayValue = 0;
+            arrayValue = winning_numbers[i];
+            // if it equals the a winning number, the will be alerted
+            if (key == arrayValue)
+            {
+                didYouWin = true;
+                break;
+            }
+        }
+        if (didYouWin == true)
+        {
+            cout << "Congrats! You won the lottery!\n";
+            cout << "Do you want to try to increase your winnings? Enter yes now if want to gain more money\n";
+            getline(cin,repeat);
+        }
+        else
+        {
+            cout << "Unfortunately, you did not win the lottery.\nWould you like to buy another ticket? There's a good chance you could win. Think of what you could do with the money!\n";
+            cout << "Enter yes if you believe in yourself\n";
+            getline(cin,repeat);
+        }
+    }
+    while(repeat == "yes");
 }
 
 void worksheet9(string namedItem) {
