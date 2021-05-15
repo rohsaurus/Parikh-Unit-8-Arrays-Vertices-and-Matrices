@@ -1,11 +1,12 @@
 /*
 *Rohan Parikh
 *Unit 8 Arrays Vertices and Matrices
-*5 May 2021-
+*5 May 2021 -
 *Extra Thing:Worksheet Arrays Extra Thing is to print question 2 array to a file
 *Extra Thing: Worksheet Functions and arrays In Question 1, print user's favorite number and vector into a file
 *Extra Thing: Worksheet Parallel Arrays print final output to a file
 *Extra Thing: Worksheet Searching arrays allows user to try to win the lottery again
+*Extra Thing: Working Searching and Sorting arrays allowing user to input key again if its not a value on the array
 */
 
 #include "Worksheets.h"
@@ -202,6 +203,7 @@ void worksheet7(string namedItem) {
     file << "Distance \tTime\n";
     file << Distance[index] << "\t\t" << Time[index];
     file << endl;
+    cout << endl << endl;
 
     
     // three parallal arrays Question 2
@@ -239,7 +241,7 @@ void worksheet8(string namedItem) {
             // declaring temp varabiable
             int arrayValue = 0;
             arrayValue = winning_numbers[i];
-            // if it equals the a winning number, the will be alerted
+            // if it equals the winning number, user will be alerted
             if (key == arrayValue)
             {
                 didYouWin = true;
@@ -259,12 +261,109 @@ void worksheet8(string namedItem) {
             getline(cin,repeat);
         }
     }
-    while(repeat == "yes");
+    while(repeat == "yes"); //repeating if user wants to
+
+    // Question Two
+    // binary search for a key value
+    // the array is already sorted so no need to sort
+    int binSearchArr[] ={5,6,10,14,15,16,18,22};
+    //asking user for key value
+    cout << "What number do you want to look for?\n";
+    int key = Data_Validation_integer();
+    // running binary search function
+    int index = binarySearchArray(binSearchArr,7,key);
+    if (index == -1)
+    {
+        cout << "Your key value is not in the function. The binary search returned false\n";
+    }
+    // final output
+    for (int a : binSearchArr)
+    {
+        cout << a << " ";
+    }
+    cout << endl;
+    if (index == -1 )
+    {
+        cout << "print not found for user key value\n";
+    }
+    else
+    {
+        cout << "Print found for use key value:" << index << endl;
+    }
+
+    
 }
 
 void worksheet9(string namedItem) {
+    // printing worksheet name
     std::cout << endl << "worksheet: " << namedItem << endl << endl;
     //Put all code for worksheet 4 here
+    // making code to generate 50 random int
+    int randomArray[49];
+    int max = 15;
+    srand(time(0));
+    for (int i = 0; i < 49; i++)
+    {
+        int random_num = 0;
+        random_num = (rand() % max);
+        if (random_num < 2)
+        {
+            // discarding if it's less than two
+            random_num = 0;
+            i--;
+        }
+        else
+        {
+            // adding to array
+            randomArray[i] = random_num;
+        }
+    }
+
+    // asking user for a key number
+    int userKey = 0;
+    while (userKey > 15 || userKey < 2)
+    {
+        userKey = Data_Validation_integer();
+        cout << "NOTE: If you are asked to enter a number again that means you entered a key value that is less than 2 or greater than 15. Make sure that the key value is between 2 and 15\n.";
+    }
+    // using binary search to search for the key in the vector
+    int index = 0;
+    // sorting array in acending order
+    int n = 49;
+    int temp;
+    for(int i = 0; i < n; i++)
+    {		
+        for(int j = i + 1; j < n; j ++)
+        {
+            if(randomArray[i]>randomArray[j])
+            {
+                temp = randomArray[i];
+                randomArray[i] = randomArray[j];
+                randomArray[j] = temp;
+            }
+        }
+    }
+    do 
+    {
+        // running method
+        // if index is -1 (not a value in the array) the loop will run again and the user will have to change their key (extra part)
+        index = binarySearchArray(randomArray, 49, userKey);
+        // Extra Thing: Allowing user to choose a new key
+        if (index == -1)
+        {
+            cout << "Your key value is not in the array. Please enter another key value\n";
+            while (userKey > 15 || userKey < 2)
+            {
+                userKey = Data_Validation_integer();
+                cout << "NOTE: If you are asked to enter a number again that means you entered a key value that is less than 2 or greater than 15. Make sure that the key value is between 2 and 15.";
+            }
+        }
+        else
+        {
+        }
+    }
+    while (index == -1);
+   
 }
 
 void worksheet10(string namedItem) {

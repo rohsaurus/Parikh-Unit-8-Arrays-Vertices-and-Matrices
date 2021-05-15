@@ -34,7 +34,7 @@ int main()
     string name6 = "Working with Functions and Arrays Question 2";
     string name7 = "Worksheet Working with Parallel Arrays";
     string name8 = "Working with Searching Arrays";
-    string name9 = "Unassigned";
+    string name9 = "Working with searching and sorting arrays";
     string name10 = "Unassigned";
 /*
     do {
