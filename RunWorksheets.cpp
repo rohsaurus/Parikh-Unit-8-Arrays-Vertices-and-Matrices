@@ -6,6 +6,7 @@
  *Extra Thing: Worksheet Functions and arrays In Question 1, print user's favorite number and vector into a file
  *Extra Thing: Worksheet Parallel Arrays print final output to a file
  *Extra Thing: Worksheet Searching arrays allows user to try to win the lottery again
+*Extra Thing Worksheet Searching and sorting arrays allows user to print bubble sort array to file question 5
  */
 
 #include <iostream>

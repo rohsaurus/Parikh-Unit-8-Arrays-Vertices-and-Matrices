@@ -6,7 +6,7 @@
 *Extra Thing: Worksheet Functions and arrays In Question 1, print user's favorite number and vector into a file
 *Extra Thing: Worksheet Parallel Arrays print final output to a file
 *Extra Thing: Worksheet Searching arrays allows user to try to win the lottery again
-*Extra Thing: Working Searching and Sorting arrays allowing user to input key again if its not a value on the array
+*Extra Thing Worksheet Searching and sorting arrays allows user to print bubble sort array to file question 5
 */
 
 #include "Worksheets.h"
@@ -299,8 +299,9 @@ void worksheet9(string namedItem) {
     std::cout << endl << "worksheet: " << namedItem << endl << endl;
     //Put all code for worksheet 4 here
     // making code to generate 50 random int
+    // Question 1
     int randomArray[49];
-    int max = 15;
+    int max = 16;
     srand(time(0));
     for (int i = 0; i < 49; i++)
     {
@@ -319,52 +320,110 @@ void worksheet9(string namedItem) {
         }
     }
 
+    // Question 2
     // asking user for a key number
     int userKey = 0;
     while (userKey > 15 || userKey < 2)
     {
         userKey = Data_Validation_integer();
-        cout << "NOTE: If you are asked to enter a number again that means you entered a key value that is less than 2 or greater than 15. Make sure that the key value is between 2 and 15\n.";
+        cout << "NOTE: If you are asked to enter a number again that means you entered a key value that is less than 2 or greater than 15. Make sure that the key value is between 2 and 15\n";
     }
-    // using binary search to search for the key in the vector
+    // Question 3
     int index = 0;
-    // sorting array in acending order
-    int n = 49;
-    int temp;
-    for(int i = 0; i < n; i++)
-    {		
-        for(int j = i + 1; j < n; j ++)
+    int j = 0;
+    while (true)
+    {
+      // searching through array for user key
+        int temp = randomArray[j];
+        if (temp == userKey)
         {
-            if(randomArray[i]>randomArray[j])
+            index = j;
+            cout << "Your key value was found at index " << index << endl;
+            break;
+        }
+        j ++;
+    }
+    // printing array
+    int b = 0;
+    for (int a : randomArray)
+    {
+        // adding new line every 10 numbers
+        if (b == 9 || b == 19 || b == 29 || b == 39 || b == 49)
+            
+        {
+            cout << endl;
+        }
+        cout << a << " ";
+        b ++;
+    }
+    cout << endl;
+    // Question 4
+    cout << "Array Sorted in Descending Order by the Bubble Sort.\n";
+    // Question 5
+    // bubble sorting
+    int n = size(randomArray);
+    for(int i = 0; i < n-1 ; i++)
+    {
+        for(j =0; j < n -i -1 ; j++)
+        {
+            //checking if previous value is greater than the next one
+            if(randomArray[j] < randomArray[j+1])
             {
+                // temp will store variable before swap
+                int temp = randomArray[j];
+                randomArray[j] = randomArray[j+1];
+                randomArray[j+1]=temp;
+            }
+        }
+    }
+    cout << "Bubble Sort:\n";
+    for (int i = 0; i < n; i++)
+        cout << randomArray[i] << " ";
+    // extra thing
+    // allows user to print this array to a file
+    ofstream fout;
+    fout.open("bubblesort.txt");
+    cout << "Do you want to save this array to a file? Enter yes now\n";
+    string userChoice = " ";
+    getline(cin,userChoice);
+    if (userChoice == "yes")
+    {
+        cout << "Saving to a file\n";
+        for (int i = 0; i < n; i++)
+            fout << randomArray[i] << " ";
+    }
+    // Question 6
+    cout << "Array Sorted in Ascending Order by the Exchange Sort.\n";
+
+    // Question 7
+    // exchange sort algorithem
+    // declaring vars
+    int i,k;
+    int temp;
+    int numLength = size(randomArray);
+    // elements that will be compared
+    for (i = 0; i < (numLength - 1); i++)
+    {
+        // rest of the elements in the array
+        for (j = (i + 1); j < numLength; j++)
+        {
+            // acesnding order
+            if (randomArray[i] > randomArray[j])
+            {
+                // swaping the vars
                 temp = randomArray[i];
                 randomArray[i] = randomArray[j];
                 randomArray[j] = temp;
             }
         }
     }
-    do 
+    // printing array
+    for (int b : randomArray)
     {
-        // running method
-        // if index is -1 (not a value in the array) the loop will run again and the user will have to change their key (extra part)
-        index = binarySearchArray(randomArray, 49, userKey);
-        // Extra Thing: Allowing user to choose a new key
-        if (index == -1)
-        {
-            cout << "Your key value is not in the array. Please enter another key value\n";
-            while (userKey > 15 || userKey < 2)
-            {
-                userKey = Data_Validation_integer();
-                cout << "NOTE: If you are asked to enter a number again that means you entered a key value that is less than 2 or greater than 15. Make sure that the key value is between 2 and 15.";
-            }
-        }
-        else
-        {
-        }
+        cout << b << " ";
     }
-    while (index == -1);
-   
 }
+   
 
 void worksheet10(string namedItem) {
     std::cout << endl << "worksheet: " << namedItem << endl << endl;
