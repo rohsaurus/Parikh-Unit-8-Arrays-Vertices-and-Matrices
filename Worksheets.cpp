@@ -55,9 +55,15 @@ void worksheet2(string namedItem) {
     {
         randInt.push_back(rand()%max);
     }
+    // calculating amount of even numbers as well
     // printing array
+    int amountofEven = 0;
     for (int a : randInt)
     {
+        if (a % 2 == 0)
+        {
+            amountofEven ++;
+        }
         cout << a << ", ";
     }
     // adding space in between
@@ -67,7 +73,9 @@ void worksheet2(string namedItem) {
     {
         cout << randInt[i] << ", ";
     }
-    
+    cout << endl;
+    // printing amount of even numbers
+    cout << "There are " << amountofEven << " even numbers in the vector\n";
 
 }
 
@@ -85,16 +93,17 @@ void worksheet3(string namedItem) {
         int age = Data_Validation_integer();
         ages.push_back(age);               
     }
-    // printing out ages greater than 15
+    // printing out amount of ages greater than 15
+    int olderThan15 = 0;
     for (int i: ages)
     {
-        int vector_value = i;
         // if greater than 15, print otherwise no print
         if (i > 15)
         {
-            cout << i << endl;
+            olderThan15 ++;
         }
       }
+    cout << "There are " << olderThan15 << " ages in the vector that are older than 15\n";
 }
 
 void worksheet4(string namedItem) {
@@ -128,14 +137,16 @@ void worksheet4(string namedItem) {
         if (userChoice>= 6)
         {
             cout << "6 and 7 (Saturday and Sunday) are not valid. Enter a number 1-5 (Monday-Friday)\n";
-            userChoice == Data_Validation_integer();
+            userChoice = Data_Validation_integer();
         }
-        cout << sales[userChoice - 1];
+        int indexVector = userChoice -1;
+        int vectorValue = sales[indexVector];
+        cout << vectorValue;
         cout << endl;
         cout << "Would you like to see another day? If not, enter 'no'\n";
         string choice = " ";
         getline(cin,choice);
-        if (choice == "no")
+        if (choice == "no" || choice == "No" || choice == "NO")
         {
             break;
         }
@@ -146,7 +157,6 @@ void worksheet4(string namedItem) {
 void worksheet5(string namedItem) {
     // worksheet name
     std::cout << endl << "worksheet: " << namedItem << endl << endl;
-    //Put all code for worksheet 5 here
     vector <int> num;
     for (int i = 0; i < 10; i++)
     {
@@ -158,7 +168,9 @@ void worksheet5(string namedItem) {
     int favorite = Data_Validation_integer();
     // running favorite method
     int number_of_favorite = Favorite(favorite,num);
+    cout << "Your favorite number: " << favorite << endl;
     cout << "You have entered your favorite number " << number_of_favorite << " times\n.";
+    cout << "I wonder why " << favorite << " is your favorite number?\n";
     // extra thing
     // printing favorite number and vector into a file
     ofstream favoriteNumber;

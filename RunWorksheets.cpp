@@ -97,7 +97,7 @@ int main()
             runAgain = false;
         }
     } while (runAgain);
-/*Uncomment as many as you need*/
+/*Uncomment as many as you need
     do {
         worksheet6(name6);
         cout << "Press y/Y to run again. Any other character to proceed: ";
@@ -109,7 +109,7 @@ int main()
             runAgain = false;
         }
     } while (runAgain);
-
+*/
     do {
         worksheet7(name7);
         cout << "Press y/Y to run again. Any other character to proceed: ";
@@ -145,7 +145,7 @@ int main()
             runAgain = false;
         }
     } while (runAgain);
-
+/*
     do {
         worksheet10(name10);
         cout << "Press y/Y to run again. Any other character to proceed: ";
@@ -156,5 +156,5 @@ int main()
         else {
             runAgain = false;
         }
-    } while (runAgain);
+    } while (runAgain);*/
 }

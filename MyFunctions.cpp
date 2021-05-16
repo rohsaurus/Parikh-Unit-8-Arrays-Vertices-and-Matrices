@@ -29,16 +29,18 @@ int Data_Validation_integer() {
 }
 int Favorite(int favoriteNumber, std::vector<int> numbers)
 {
+    // making counter variable
+    int counter = 0;
     // checking how many times favorite number is present in vector
     for (int a: numbers)
     {
-        int testing = a;
-        if (testing == favoriteNumber)
+        
+        if (a == favoriteNumber)
         {
-            favoriteNumber ++;
+            counter ++;
         }
     }
-    return favoriteNumber;
+    return counter;
 }
 void reverseFunctionforQ2Worksheet2(std::string words[])
 {
@@ -163,23 +165,26 @@ void reverseFunctionforQ2Worksheet2(std::string words[])
 }
 int getIndex(std::vector<int> v, int k)
 {
-    auto it = find(v.begin(), v.end(), k);
     int index = 0;
- 
-    // If element was found
-    if (it != v.end())
+    bool valueFound = false;
+    do
     {
-     
-        // calculating the index
-        // of K
-        index = it - v.begin();
-    }
-    else {
-        // If the element is not
-        // present in the vector
-        cout << "That's not a valid distance\nPlease enter in a valid distance\n";
-        k = Data_Validation_integer();
-    }
+        for (int a = 0; a < v.size(); a++)
+        {
+            if (v[a] == k)
+            {
+                index = a;
+                valueFound = true;
+                //break;
+            }
+        }
+        if (valueFound == false) {
+            // If the element is not
+            // present in the vector
+            cout << "That's not a valid distance\nPlease enter in a valid distance\n";
+            k = Data_Validation_integer();
+        }
+    }while(valueFound == false);
     return index;
 }
 void studentData(std::vector<std::string> names, std::vector<std::string> address, std::vector<std::string> phoneNumber, int i)
