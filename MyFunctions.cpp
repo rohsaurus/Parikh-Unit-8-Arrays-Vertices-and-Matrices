@@ -29,6 +29,7 @@ int Data_Validation_integer() {
 }
 int Favorite(int favoriteNumber, std::vector<int> numbers)
 {
+    // checking how many times favorite number is present in vector
     for (int a: numbers)
     {
         int testing = a;
@@ -271,6 +272,7 @@ cout << endl << endl;
 
 int binarySearchArray(int array[], int size, int searchValue)
 {
+    // binary search algorithem
     
     int low = 0;
     int high = size - 1;

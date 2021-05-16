@@ -174,7 +174,7 @@ void worksheet5(string namedItem) {
 void worksheet6(string namedItem) {
     // Worksheet Name
     std::cout << endl << "worksheet: " << namedItem << endl << endl;
-    //Put all code for worksheet 1 here
+   // making array to pass into function
     string words[] = {"radar","warts","evil","racecar","toot"};
     // function to reverse, check if same, and output
     reverseFunctionforQ2Worksheet2(words);
@@ -376,6 +376,7 @@ void worksheet9(string namedItem) {
             }
         }
     }
+    // printing bubble sort
     cout << "Bubble Sort:\n";
     for (int i = 0; i < n; i++)
         cout << randomArray[i] << " ";
@@ -392,6 +393,7 @@ void worksheet9(string namedItem) {
         for (int i = 0; i < n; i++)
             fout << randomArray[i] << " ";
     }
+    fout.close();
     // Question 6
     cout << "Array Sorted in Ascending Order by the Exchange Sort.\n";
 
@@ -417,7 +419,8 @@ void worksheet9(string namedItem) {
             }
         }
     }
-    // printing array
+    // printing exchange sort
+    cout <<"Exchange Sort: ";
     for (int b : randomArray)
     {
         cout << b << " ";
