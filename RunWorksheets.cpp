@@ -37,7 +37,7 @@ int main()
     string name8 = "Working with Searching Arrays";
     string name9 = "Working with searching and sorting arrays";
     string name10 = "Unassigned";
-/*
+
     do {
         worksheet1(name1);
         cout << "Press y/Y to run again. Any other character to proceed: ";
@@ -97,7 +97,7 @@ int main()
             runAgain = false;
         }
     } while (runAgain);
-/*Uncomment as many as you need
+/*Uncomment as many as you need*/
     do {
         worksheet6(name6);
         cout << "Press y/Y to run again. Any other character to proceed: ";
@@ -109,7 +109,7 @@ int main()
             runAgain = false;
         }
     } while (runAgain);
-*/
+
     do {
         worksheet7(name7);
         cout << "Press y/Y to run again. Any other character to proceed: ";

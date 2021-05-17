@@ -275,35 +275,35 @@ cout << endl << endl;
     }
 }
 
-int binarySearchArray(int array[], int size, int searchValue)
-{
-    // binary search algorithem
-    
-    int low = 0;
-    int high = size - 1;
- 
-    int mid;
- 
-    while (low <= high)
+    int binarySearchArray(int array[], int size, int searchValue)
     {
-        mid = (low + high) / 2;
- 
-        if(searchValue == array[mid])
+        // binary search algorithem
+        
+        int low = 0;
+        int high = size - 1;
+     
+        int mid;
+     
+        while (low <= high)
         {
-            return mid;
+            mid = (low + high) / 2;
+     
+            if(searchValue == array[mid])
+            {
+                return mid;
+            }
+            else if (searchValue > array[mid])
+            {
+                low = mid + 1;
+            }
+            else
+            {
+                high = mid - 1;
+            }
         }
-        else if (searchValue > array[mid])
-        {
-            low = mid + 1;
-        }
-        else
-        {
-            high = mid - 1;
-        }
+     
+        return -1;
     }
- 
-    return -1;
-}
 
 
 

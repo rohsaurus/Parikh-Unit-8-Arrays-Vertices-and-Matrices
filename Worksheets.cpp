@@ -245,7 +245,11 @@ void worksheet8(string namedItem) {
     {
         cout << "Enter your ticket number\n";
         // checking user input to make sure its good
-        int key = Data_Validation_integer();
+        int key = 0;
+        do
+        {
+            key = Data_Validation_integer();
+        }while (key < 0);
         // checking if key is one of the winning numbers
         bool didYouWin = false;
         for (int i = 0; i < 6; i++)
@@ -283,7 +287,7 @@ void worksheet8(string namedItem) {
     cout << "What number do you want to look for?\n";
     int key = Data_Validation_integer();
     // running binary search function
-    int index = binarySearchArray(binSearchArr,7,key);
+    int index = binarySearchArray(binSearchArr,8,key);
     if (index == -1)
     {
         cout << "Your key value is not in the function. The binary search returned false\n";
@@ -438,7 +442,6 @@ void worksheet9(string namedItem) {
         cout << b << " ";
     }
 }
-   
 
 void worksheet10(string namedItem) {
     std::cout << endl << "worksheet: " << namedItem << endl << endl;
